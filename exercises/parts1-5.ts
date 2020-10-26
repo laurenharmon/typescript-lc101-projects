@@ -17,15 +17,21 @@ let daysToMars: number = hoursToMars/24;
 
 
 // Code an output statement here (use a template literal):
-console.log(`${spacescraftName} will take ${daysToMars} to reach Mars.`);
+// console.log(`${spacescraftName} will take ${daysToMars} to reach Mars.`);
 
 
 // Part 3: Create a Function ("getDaysToLocation")
-
-
+let getDaysToLocation = function(kilometersAway: number): number {
+    let milesToLocation: number = kilometersAway*milesPerKilometer;
+    let hoursToLocation: number = milesToLocation/speedMph;
+    return hoursToLocation/24;
+};
 
 // Move your output statement from part 2 here. Update the template literal to call
 // the function and print the outputs for a Mars trip and a moon trip.
+console.log(`${spacescraftName} will take ${getDaysToLocation(kilometersToMars)} to reach Mars.`);
+console.log(`${spacescraftName} will take ${getDaysToLocation(kilometersToTheMoon)} to reach the moon.`);
+
 
 
 
